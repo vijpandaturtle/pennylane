@@ -254,7 +254,7 @@ class KerasConvLayer(Layer):
             input_shape (tuple or tf.TensorShape): shape of input data
         """
         for weight, size in self.weight_shapes.items():
-             spec = self.weight_specs.get(weight, {})
+            spec = self.weight_specs.get(weight, {})
             self.qnode_weights[weight] = self.add_weight(name=weight, shape=size, **spec)
 
         super().build(input_shape)
